@@ -1,0 +1,10 @@
+Election Results
+-------------------------
+Total Votes: {number_votes}
+-------------------------
+{candidates[count]}: {percentages[count]}% ({vote_counts[count]})
+{candidates[count]}: {percentages[count]}% ({vote_counts[count]})
+{candidates[count]}: {percentages[count]}% ({vote_counts[count]})
+{candidates[count]}: {percentages[count]}% ({vote_counts[count]})
+-------------------------
+Winner: {winner}

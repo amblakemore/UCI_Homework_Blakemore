@@ -59,20 +59,20 @@ for count in range(len(candidates)):
 print(f'-------------------------')
 print(f'Winner: {winner}')
 
-# # Export
-# output_file = election_dataCSV[0:-4]
-# write_election_dataCSV = f'{output_file}pypoll_results.txt'
-# filewriter = open(write_election_dataCSV, mode = "w")
+# Export
+election_data_file = os.path.join ("election_data.txt")
+with open(election_data_file, 'w') as outfile:
 
-# # Text File
-# filewriter.write('Election Results')
-# frilewriter.write('-------------------------')
-# filewriter.write('Total Votes: {number_votes}')
-# filewriter.write('-------------------------')
-# for cocunt in range(len(candidates)):
-#     filewriter.write('{candidates[count]}: {percentages[count]}% ({vote_counts[count]})')
-# filewriter.write('-------------------------')
-# filewriter.write('Winner: {winner}')
+# Text File
+    outfile.write('Election Results\n')
+    outfile.write('-------------------------\n')
+    outfile.write('Total Votes: {number_votes}\n')
+    outfile.write('-------------------------\n')
+    for count in range(len(candidates)):
+        outfile.write('{candidates[count]}: {percentages[count]}% ({vote_counts[count]})\n')
+    outfile.write('-------------------------\n')
+    outfile.write('Winner: {winner}\n')
+
 
 
             
