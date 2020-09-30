@@ -13,25 +13,25 @@ election_dataCSV = os.path.join("election_data.csv")
     # Read through the file
 with open(election_dataCSV) as csv_file:
     csvreader = csv.reader(csv_file, delimiter= ",")
-    csv_header = next(csv_file)
+    csv_header = next(csvreader)
         
     # Start the loop
     for line in csvreader:
 
-     # Vote Count
+        # Vote Count
         number_votes = number_votes + 1
 
-    # Name the Canditates
-    candidate = line[2]
+        # Name the Canditates
+        candidate = line[2]
 
-    # Tally the votes
-    if candidate in candidates:
-        candidate_index = candidates.index(candidate)
-        vote_counts[candidate_index] = vote_counts[candidate_index] + 1
+        # Tally the votes
+        if candidate in candidates:
+         candidate_index = candidates.index(candidate)
+         vote_counts[candidate_index] = vote_counts[candidate_index] + 1
 
-    else:
-        candidates.append(candidate)
-        vote_counts.append(1)
+        else:
+            candidates.append(candidate)
+            vote_counts.append(1)
 
 # Declare additional variables
 percentages = []
