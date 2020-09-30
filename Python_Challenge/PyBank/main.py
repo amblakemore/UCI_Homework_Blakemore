@@ -22,7 +22,7 @@ with open(csvpath) as csv_file:
 for row in csv_reader:
 
     # find the months in the data set
-    number_months += 1
+    number_months = number_months + 1
 
     # Total amount of the profit/loss
     current_month_profit = int(row[1])
@@ -45,10 +45,27 @@ for row in csv_reader:
         # make the current month the previous month to continue the loop
         last_month_profit = current_month_profit
 
-    
+    # find the total sum of the profits/losses
+    sum_profit_loss = sum(profit_loss_changes)
+    average_profit_loss = (sum_profit_loss/(number_months)
 
+    # find the largest profit and the largest loss
+    largest_profit = max(profit_loss_changes)
+    largest_loss = min(profit_loss_changes)
 
+    # index the month with the highest profit and biggest loss
+    largest_profit_index = profit_loss_changes.index(largest_profit)
+    largest_loss_index = profit_loss_changes.index(largest_loss)
 
+    # assign the biggest profit and biggest loss
+    best_month = months[largest_profit_index]
+    worst_month = months[largest_loss_index]
 
-
-
+    #Print
+    print(f'Financial Analysis')
+    print(f'------------------')
+    print(f'Total Months: {number_months}')
+    print(f'Total: {net_profit_loss}')
+    print(f'Average Change: {average_profit_loss}')
+    print(f'Greatest Increase in Profit: {largest_profit}')
+    print(f'Greatest Loss in Profit: {largest_loss}')
