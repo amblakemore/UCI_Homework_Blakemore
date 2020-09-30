@@ -6,12 +6,12 @@ csvpath = os.path.join("budget_data.csv")
 
 # define variables
 months = []
-months_count = 0
-net_profit= 0
-month_profit= 0
-month_change = 0
+profit_loss_changes = []
+number_months = 0 
+net_profit_loss = 0
 current_month_profit = 0
-change = []
+last_month_profit = 0
+change_profit = 0
 
 # open and read the csv file
 with open(csvpath) as csv_file:
@@ -22,61 +22,30 @@ with open(csvpath) as csv_file:
 for row in csv_reader:
 
     # find the months in the data set
-    months_count += 1
+    number_months += 1
 
-    net_profit += int(row[1])
+    # Total amount of the profit/loss
+    current_month_profit = int(row[1])
+    net_profit_loss += current_month_profit
 
-    # calculate the profit
-    month_profit = int(row[1])
-    net_profit += current_month_profit
+    if (number_months ==1):
+        # make the previous month the new current month
+        last_month_profit = current_month_profit
 
-    # add each month to the list
-    months.append(str(row[0]))
+    else:
+        # calculate the change in profit/loss
+        change_profit = current_month_profit - last_month_profit
 
-    # month to month change
-    if change != 0:
-        # set month value
-        month_profit = int(row[1])
+        # add each month to our list
+        months.append(row[0])
 
-         # find the change in month's profit/loss
-        change = month_change - change
+        # add each profit/loss to our list
+        profit_loss_changes.append(profit_loss_changes)
 
-         # add each month's profit to the list of changes
-        change.append(month_change)
+        # make the current month the previous month to continue the loop
+        last_month_profit = current_month_profit
 
-        change = int(row[1])
-    elif change == 0:
-        change = int(row[1])
-
-# total profit change
-sum_profit = sum(month_profit)
-# average profit change
-average_profit_loss = ((sum_profit/months -1), 2)
-
-# Max change in profit
-max_change = max(month_profit)
-
-# Biggest loss in profit
-min_change = min(month_profit)
-
-# Idenitifying the month with highest profit
-max_change_index = month_change.index(max_change)
-min_change_index = month_change.index(min_change)
-
-# Identify the best month
-best_month = months[max_change_index]
-
-# Identify the worst month
-worst_month = months[min_change_index]
-
-# Print Results
-print(f'Financial Analysis')
-print(f'------------------------')
-print(f'Total Months: {months_count}')
-print(f'Net Profit: {net_profit}')
-print(f'Average Monthly Change: {month_change}')
-print(f'Greatest increase in Profit: {max_change}')
-print(f'Greatest loss in Profit: {min_change}')
+    
 
 
 
