@@ -50,28 +50,28 @@ winner = candidates[max_index]
 percentages = [round(i, 2) for i in percentages]
 
 # Print the Results
-print(f'Election Results')
-print(f'-------------------------')
-print(f'Total Votes: {number_votes}')
-print(f'-------------------------')
+print(f'Election Results/n')
+print(f'-------------------------\n')
+print(f'Total Votes: {number_votes}\n')
+print(f'-------------------------\n')
 for count in range(len(candidates)):
-    print(f'{candidates[count]}: {percentages[count]}% ({vote_counts[count]})')
-print(f'-------------------------')
-print(f'Winner: {winner}')
+    print(f'{candidates[count]}: {percentages[count]}% ({vote_counts[count]})\n')
+print(f'-------------------------\n')
+print(f'Winner: {winner}\n')
 
 # Export
 election_data_file = os.path.join ("election_data.txt")
-with open(election_data_file, 'w') as outfile:
+with open(election_data_file, 'w') as txtfile:
 
 # Text File
-    outfile.write('Election Results\n')
-    outfile.write('-------------------------\n')
-    outfile.write('Total Votes: {number_votes}\n')
-    outfile.write('-------------------------\n')
+    txtfile.write('Election Results\n')
+    txtfile.write('-------------------------\n')
+    txtfile.write(f'Total Votes: {number_votes}\n')
+    txtfile.write('-------------------------\n')
     for count in range(len(candidates)):
-        outfile.write('{candidates[count]}: {percentages[count]}% ({vote_counts[count]})\n')
-    outfile.write('-------------------------\n')
-    outfile.write('Winner: {winner}\n')
+        txtfile.write(f"{candidates[count]}: {percentages[count]}% ({vote_counts[count]})\n")
+    txtfile.write('-------------------------\n')
+    txtfile.write(f'Winner: {winner}\n')
 
 
 
