@@ -1,4 +1,4 @@
-City,Longitude,Latitude,Max Temp,Humidity,Cloudiness,Wind Speed,Country,Date
+City,Latitude,Longitude,Max Temp,Humidity,Cloudiness,Wind Speed,Country,Date
 albany,42.6,-73.97,57.99,82,100,3.62,US,1603240803
 sisimiut,66.94,-53.67,32.97,91,100,25.28,GL,1603240946
 jamestown,42.1,-79.24,48.0,93,90,8.05,US,1603240947
