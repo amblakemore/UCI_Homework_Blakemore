@@ -1,3 +1,10 @@
 Python_Challenege/PyPoll/election_data.csv
 Python_API_Challenge/WeatherPy/config.py
 Python_API_Challenge/VacationPy/config.py
+SQL_Challenge/Resources/employees.csv
+SQL_Challenge/Resources/departments.csv
+SQL_Challenge/Resources/dept_emp.csv
+SQL_Challenge/Resources/dept_manager.csv
+SQL_Challenge/Resources/salaries.csv
+SQL_Challenge/Resources/titles.csv
+*.DS_Store
