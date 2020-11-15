@@ -7,4 +7,6 @@ SQL_Challenge/Resources/dept_emp.csv
 SQL_Challenge/Resources/dept_manager.csv
 SQL_Challenge/Resources/salaries.csv
 SQL_Challenge/Resources/titles.csv
+Sqlalchemy_Challenge/Resources/hawaii_measurements.csv
+Sqlalchemy_Challenge/Resources/hawaii.sqlite
 *.DS_Store
