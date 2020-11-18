@@ -57,7 +57,7 @@ def precipitation():
         prcp_dict = {}
         prcp_dict["date"] = date
         prcp_dict["prcp"] = prcp
-        all_passengers.append(prcp_dict)
+        all_prcp.append(prcp_dict)
     return jsonify(all_prcp)
 
 @app.route("/api/v1/0/stations")
@@ -67,15 +67,15 @@ def stations():
     """Return a list of Station data"""
  
     # Query all stations
-    results = session.query(Stations).\
+    results = session.query(Station.Station).\
         order_by(Station.station).all()
     session.close()
 
     # Cover to a normal list
-    all_stations = list(sp.ravel(results))    
-    return jsonify(all_prcp)
+    all_stations = list(np.ravel(results))    
+    return jsonify(all_stations)
 
-@app.route("/api/v1/0/tobos")
+@app.route("/api/v1/0/tobs")
 def tobs():
     # Create our session (link) from Python to the DB
     session = Session(engine)
@@ -100,9 +100,26 @@ def tobs():
         all_tobs.append(tobs_dict)
     return jsonify(all_tobs)
 
-@app.route("/api/v1/0/start_date")
+@app.route("/api/v1.0/<start_date>/<end_date>")
+def Start_end_date(start_date, end_date):
+    session = Session(engine)
 
-@app.route("/api/v1/0/end_date")
+    """Return a list of min, avg and max tobs for start and end dates"""
+
+    results = session.query(func.min(Measurement.tobs), func.avg(Measurement.tobs), func.max(Measurement.tobs)).\
+        filter(Measurement.date >= start_date).filter(Measurement.date <= end_date).all()
+
+    session.close()
+
+    start_end_tobs = []
+    for min, avg, max in results:
+        start_end_tobs_dict = {}
+        start_end_tobs_dict["min_temp"] = min
+        start_end_tobs_dict["avg_temp"] = avg
+        start_end_tobs_dict["max_temp"] = max
+        start_end_tobs.append(start_end_tobs_dict)
+
+    return jsonify(start_end_tobs)
 
 if __name__ == "__main__":
     app.run(debug=True)
