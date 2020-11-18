@@ -1,8 +1,11 @@
 import numpy as np
+
+import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
-from flask import Flask, jsonify
+
+from flask import Flask, jsonify, render_template, request
 
 #################################################
 # Database Setup
@@ -39,7 +42,7 @@ def welcome():
         f"/api/v1.0/[start_date format:yyyy-mm-dd]/[end_date format:yyyy-mm-dd]<br/>"
     )
 
-@app.route("/api/v1/0/precipitation")
+@app.route("/api/v1.0/precipitation")
 def precipitation():
     # Create our session (link) from Python to the DB
     session = Session(engine)
@@ -47,7 +50,7 @@ def precipitation():
  
     # Query all precipitation
     results = session.query(Measurement.date, Measurement.prcp).\
-        filter(Measurement.data >= '2016-08-24').\
+        filter(Measurement.date >= '2016-08-24').\
         all()
     session.close()
 
@@ -60,14 +63,14 @@ def precipitation():
         all_prcp.append(prcp_dict)
     return jsonify(all_prcp)
 
-@app.route("/api/v1/0/stations")
+@app.route("/api/v1.0/stations")
 def stations():
     # Create our session (link) from Python to the DB
     session = Session(engine)
     """Return a list of Station data"""
  
     # Query all stations
-    results = session.query(Station.Station).\
+    results = session.query(Station.station).\
         order_by(Station.station).all()
     session.close()
 
@@ -75,7 +78,7 @@ def stations():
     all_stations = list(np.ravel(results))    
     return jsonify(all_stations)
 
-@app.route("/api/v1/0/tobs")
+@app.route("/api/v1.0/tobs")
 def tobs():
     # Create our session (link) from Python to the DB
     session = Session(engine)
@@ -99,6 +102,26 @@ def tobs():
 
         all_tobs.append(tobs_dict)
     return jsonify(all_tobs)
+
+@app.route("/api/v1.0/<start_date>")
+def Start_date(start_date):
+    session = Session(engine)
+
+    """Return a list of min, avg, and max tobs for a start date"""
+
+    results = session.query(func.min(Measurement.tobs), func.avg(Measurement.tobs), func.max(Measurement.tobs)).\
+        filter(Measurement.date >= start_date).all()
+    
+    session.close()
+
+    start_date_tobs = []
+    for min, avg, max in results:
+        start_date_tobs_dict = {}
+        start_date_tobs_dict["min_temp"] = min
+        start_date_tobs_dict["avg_temp"] = avg
+        start_date_tobs_dict["max_temp"] = max
+        start_date_tobs.append(start_date_tobs_dict)
+    return jsonify(start_date_tobs)
 
 @app.route("/api/v1.0/<start_date>/<end_date>")
 def Start_end_date(start_date, end_date):
