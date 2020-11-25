@@ -2,3 +2,24 @@
     width: 150px;
     height: 150px;
 }
+
+img {
+    max-width: 100%;
+}
+
+h1{
+    font-size: 24px;
+    font-weight: bold;
+    text-align: left;
+}
+
+h2{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+p{
+    text-align: left;
+}
+
