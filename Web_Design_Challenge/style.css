@@ -35,3 +35,17 @@ h1, h2, h3{
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: lightgreen
 }
+body{
+    width: 100%;
+    min-heigh:100%;
+    background-color: lightgray;
+}
+
+col {
+    width: 100%;
+}
+
+.homebtn{
+    background-color: white;
+    z-index:2;
+}
