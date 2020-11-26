@@ -22,4 +22,16 @@ h2{
 p{
     text-align: left;
 }
+title{
+    color: lightgreen;
+}
 
+p{
+    color: grey;
+    text-align: left;
+}
+
+h1, h2, h3{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: lightgreen
+}
