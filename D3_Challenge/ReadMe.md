@@ -8,6 +8,6 @@ The data set included with the assignment is based on 2014 ACS 1-year estimates 
 
 Using D3, we are able to successfully build and plot a scatter plot that represents each state showing healthcare vs poverty in each state. 
 
-![Alt text](/relative/path/to/ss.png?raw=true "D3 Times")
+! [Alt text](/relative/path/to/ss.png?raw=true "D3 Times")
 
 After using D3 we can see the completed plot of healthcare vs poverty in the 50 states
