@@ -8,5 +8,5 @@ Using a basic HTML webpage, we can begin by incorporating the provided data of t
 
 We will filter the data on the date/time column to pull up all of the sightings from that specific date. 
 
-[Alt text](/JavaScript_Challenge/screenshot.png)
+![Alt text](/JavaScript_Challenge/screenshot.png)
 
