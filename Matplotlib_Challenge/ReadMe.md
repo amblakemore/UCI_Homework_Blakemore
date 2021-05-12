@@ -10,9 +10,9 @@ As a senior data analyst at the company, you've been given access to the complet
 ![Alt text](/Matplotlib_Challenge/treatments.png?raw=true"Number of Times the Drug was Tested")
 
 2) If we were to extrapoliate the data from our line plot focusing on the one mouse (j246) and the summary data table, the Capomulin regimen provides one the largest reduction in tumor volume and we can see that the biggest reduction in tumor volume occurs between days 25 and 30
-
+git pu
 ![Alt text](/Matplotlob_Challenge/tumor.png?raw=true"Tumor Volume Over Time")
 
 3) Based on the correlation coefficient that was calculated, we can conclude that there is a very strong relationship between the volume of the tumor and the weight of the mouse
 
-! [Alt text](/Matplotlob_Challenge/volume.png?raw=true"Tumor Volume (mm3) vs Weight of Mouse (g)")
+![Alt text](/Matplotlob_Challenge/volume.png?raw=true"Tumor Volume (mm3) vs Weight of Mouse (g)")
