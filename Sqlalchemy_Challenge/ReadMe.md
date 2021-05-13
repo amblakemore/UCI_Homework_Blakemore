@@ -3,7 +3,7 @@
 ### Climate Analysis and Exploration
 We connect our sqlite database and then organize them into classes for "Stations" and "Measurements." Using the data, we design a query to retrieve that last year's worth of preciptiation data
 
-![Alt text](/Sqalchemy_Challenge/precipitation.png?raw=true "Optional Title")
+![Alt text](/Sqlalchemy_Challenge/precipitation.png?raw=true "Optional Title")
 
 We can also design a query to find the most activate stations (highest number of observations) and retrived the last 12 months of temperature obersation data (TOBS)
 
