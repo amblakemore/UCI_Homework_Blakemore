@@ -12,7 +12,9 @@ We've created a Python script to visualize the weather of 500+ cities across the
             - Cloudiness vs Latitude
             - Wind speed vs Latitude
             
+![Alt text](/Python_API_Challenge/WeatherPy/Images/CityLatitudevsWindSpeed.png?raw=true "Optional Title")            
+            
 ### VacationPy
 Using the information from our WeatherPy data set, we're planning a vacation! We use the jupyter-gmaps and Google Places API to create a heat map for humidity for every city from the WeatherPy portion and then plotting the hotels.
 
-
+![Alt text](/Python_API_Challenge/VacationPy/screenshot.png?raw=true "Optional Title")  
