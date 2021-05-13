@@ -17,12 +17,12 @@ I am not familiar with New York City and the most popular stations did not seem 
 
 When looking at the map and seeing bottom 10 stations, they are very remote and far away from the city. It would make sense that there were very few bikes used from these locations.
 
-![Alt text](/Tableau_Challenge/times.png?raw=true "Optional Title")
+![Alt text](/Tableau_Challenge/stations.png?raw=true "Optional Title")
 
 ## Gender
 Looking at the demographics of the customers and subscribers, the customer base is largely dominated by females with females having double the male base. When looking a the subscribers vs the customers, unsurprisingly the customer base grew in June 2020 compared to January 2020. This could be because of the better weather and typical trend during the summer. However, because of the pandemic, there was much less travel. It's possible that the growth in the customer base was due to people using the bikes to leave their homes during the day 
 
-![Alt text](/Tableau_Challenge/times.png?raw=true "Optional Title")
+![Alt text](/Tableau_Challenge/gender.png?raw=true "Optional Title")
 
 
 
